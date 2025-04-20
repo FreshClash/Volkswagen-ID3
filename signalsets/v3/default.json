@@ -1,7 +1,23 @@
 { "commands": [
-{ "hdr": "07B", "cmd": {"22": "028C"}, "freq": 1,
-  "signals": [
-    {"id": "ID3_HVBAT_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "HV battery charge", "suggestedMetric": "stateOfCharge"}
-  ]}
+"hdr": "FC007B",
+      // 'rax' (Empfangsadresse) wurde nicht angegeben, wird weggelassen.
+      "cmd": {
+        "22": "028C" // Service 22 (Read Data By Identifier), PID/DID 028C
+      },
+      // 'freq' wurde nicht angegeben, Annahme: 1 Sekunde (1 Hz). Bei Bedarf anpassen.
+      "freq": 1,
+      "signals": [
+        {
+          "id": "BMS_SOC",       // Eindeutige ID für das Signal
+          "path": "Battery",     // Logischer Pfad zur Gruppierung
+          "fmt": {
+            "len": 8,          // Annahme: 'aa' ist das erste Datenbyte (8 Bits)
+            "max": 100,        // Maximal erwarteter Wert (Prozent)
+            "mul": 0.4,        // Multiplikator basierend auf Formel aa / 2.5 => aa * 0.4
+            "unit": "percent"  // Einheit ist Prozent
+          },
+          "name": "SOC BMS" // Menschenlesbarer Name (State of Charge Battery Management System)
+        }
+      ]
 ]
 }
