@@ -38,6 +38,28 @@
                         "unit": "percent"
                     },
                     "name": "SOC BMS"
+                },
+                {
+                    "hdr": "746",
+                    "rax": "7B0",
+                    "cmd": {
+                        "22": "2613"
+                    },
+                    "freq": 1,
+                    "signals": [
+                        {
+                            "id": "CLIMATE_INSIDE_TEMP",
+                            "path": "Climate",
+                            "fmt": {
+                                "len": 16,
+                                "mul": 0.2,
+                                "off": -40,
+                                "unit": "celsius"
+                            },
+                            "name": "Inside Temperature",
+                            "suggestedMetric": "temperature"
+                        }
+                    ]
                 }
             ]
         }
