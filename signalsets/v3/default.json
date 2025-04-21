@@ -1,9 +1,9 @@
 {
     "commands": [
         {
-            "hdr": "07B",
+            "hdr": "7E4",
             "cmd": {
-                "22": "028C"
+                "22": "19B5"
             },
             "freq": 1,
             "signals": [
