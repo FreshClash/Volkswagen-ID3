@@ -19,6 +19,27 @@
                     "name": "SOC BMS"
                 }
             ]
+        },
+        {
+            "hdr": "07b",
+            "rax": "08c",
+            "cmd": {
+                "22": "028c"
+            },
+            "freq": 1,
+            "signals": [
+                {
+                    "id": "BMS_SOC",
+                    "path": "Battery",
+                    "fmt": {
+                        "len": 8,
+                        "max": 100,
+                        "mul": 0.4,
+                        "unit": "percent"
+                    },
+                    "name": "SOC BMS"
+                }
+            ]
         }
     ]
 }
